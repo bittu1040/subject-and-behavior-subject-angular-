@@ -20,39 +20,37 @@ passengers: PassengerI[] = [{ id:1,fullname:'krati',checkedIn:true},
 subject =new Subject<PassengerI>(); 
 subject1= new Subject<any>(); 
 behavSubject =new BehaviorSubject<PassengerI>({id: 1, fullname: "tom", checkedIn: true});   
-behavSubject1= new BehaviorSubject<any>("any initial data")
 subjectData: PassengerI;
 subject_1_Data: any;
 behavSubjectData: PassengerI;
-behavSubject_1_Data: any;
 constructor(){
-  // this.subject.subscribe({
-  //   next: (data)=>{
-  //     this.subjectData= data
-  //     console.log("next block", data)
-  //   }, 
-  //   error: (error)=>{
-  //     console.log("error block", error)
-  //   },
-  //   complete:()=>{
-  //     console.log("complete block", this.subjectData)
-  //   }
-  // })
-  // this.subject.next({id: 1, fullname: "tom", checkedIn: true})
+  this.subject.subscribe({
+    next: (data)=>{
+      this.subjectData= data
+      console.log("next block", data)
+    }, 
+    error: (error)=>{
+      console.log("error block", error)
+    },
+    complete:()=>{
+      console.log("complete block", this.subjectData)
+    }
+  })
+  this.subject.next({id: 1, fullname: "tom", checkedIn: true})
 
-  // this.subject1.subscribe({
-  //   next:(data)=>{
-  //     this.subject_1_Data= data
-  //     console.log("next block", data)
-  //   }, 
-  //   error:(error)=>{
-  //     console.log("error block", error)
-  //   },
-  //   complete:()=>{
-  //     console.log("complete block", this.subject_1_Data)
-  //   }
-  // })
-  // this.subject1.next("vvb")
+  this.subject1.subscribe({
+    next:(data)=>{
+      this.subject_1_Data= data
+      console.log("next block", data)
+    }, 
+    error:(error)=>{
+      console.log("error block", error)
+    },
+    complete:()=>{
+      console.log("complete block", this.subject_1_Data)
+    }
+  })
+  this.subject1.next("vvb")
 
   this.behavSubject.subscribe({
     next: (data)=>{
