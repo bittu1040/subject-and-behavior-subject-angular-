@@ -76,7 +76,7 @@ export class AppComponent implements OnInit {
     this.subject.next({ id: 1, fullname: 'tom', checkedIn: true }); // try uncommenting this line then also you will get some data, which we set it in beginning while initializing the behaviour subject.
   }
   ngOnInit() {
-    this.subjectMethod();
+    // this.subjectMethod();
   }
 
   subjectMethod() {
